@@ -1,5 +1,6 @@
 import React from 'react';
 import "./signup.css";
+import { Link } from "react-router-dom"
 
 
 const SignUp = () => {
@@ -14,6 +15,8 @@ const handleSubmit  = () => {
     localStorage.setItem("lastname", lastname)
     localStorage.setItem("email", email)
     localStorage.setItem("password", password)
+
+    window.href = "/login"
 }
 
 
@@ -29,6 +32,7 @@ const handleSubmit  = () => {
                  <input type="password"  name="password" laceholder= "password" onChange={(e) => setPassword(e.target.value)}/>
                  <button>Submit</button>
               </form>
+              <p>Already Registerd? <Link to="/login">Login</Link></p>
             </div>
           
         </div>
